@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.bosch.iot.vorto</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.9.0-SNAPSHOT</version>
+        <name>AV-Scan Document Generator for Repository</name>
+        <build>
+                <plugins>
+                        <plugin>
+                                <groupId>com.bosch.inl.releng.avsupport</groupId>
+                                <artifactId>inl-avsupport-maven-plugin</artifactId>
+                                <version>0.2.1</version>
+                                <executions>
+                                        <execution>
+                                                <id>av-scan</id>
+                                                <phase>verify</phase>
+                                                <goals>
+                                                        <goal>scan</goal>
+                                                </goals>
+                                                <configuration>
+                                                        <baseUrl>http://si0vmc1556.de.bosch.com:9090/virusscanner</baseUrl>
+                                                        <fileToScan>${project.build.directory}/repository-${project.version}.jar</fileToScan>
+                                                </configuration>
+                                        </execution>
+                                </executions>
+                        </plugin>
+                </plugins>
+        </build>
+</project>
