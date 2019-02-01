@@ -20,7 +20,7 @@
                                                 </goals>
                                                 <configuration>
                                                         <baseUrl>http://si0vmc1556.de.bosch.com:9090/virusscanner</baseUrl>
-														<fileToScan>repository/repository-server/target/infomodelrepository.jar</fileToScan>
+														<fileToScan>${bosch.avscan.fileToScan}</fileToScan>
                                                 </configuration>
                                         </execution>
                                 </executions>
